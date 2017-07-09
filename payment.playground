@@ -1,0 +1,129 @@
+import UIKit
+
+class User {
+    
+    init (name1:String)
+    {
+        self.name = name1
+    }
+    var name:String
+    var amountSpent:Double = 0
+    var amountOwed:Double = 0
+    var amountOwes:Double = 0
+    
+    func getAmountOwed () -> Double
+    {
+        return self.amountOwed
+    }
+    func getAmountOwes () -> Double
+    {
+        return self.amountOwes
+    }
+    func getAmountSpent () -> Double
+    {
+        return self.amountSpent
+    }
+    func getName () -> String
+    {
+        return self.name
+    }
+
+    func addAmountSpent(mon:Double)
+    {
+        self.amountSpent = mon
+    }
+    func addAmountOwed(mon:Double)
+    {
+        self.amountOwed = mon
+    }
+    func addAmountOwes(mon:Double)
+    {
+        self.amountOwes = mon
+    }
+
+}
+var numbUsers = 0
+var Users:[User]
+var username:String
+var individMoneySpent = 0
+var total_money = 0
+var total_money_per_person = 0
+println("Enter amount of users")
+//cin>>users
+println("Enter users' names")
+//Enter Names for all User objects. This is the User constructor.
+for i in 0..numbUsers
+{
+    //cin>>username
+    var newUser(username)
+    Users.append(newUser)
+}
+println("Enter amount each user spent")
+
+for i in 0..numbUsers
+{
+    Users[i].getName
+    //cin>>money_spent_i;
+    Users[i].addAmounSpent(individMoneySpent)
+}
+
+for i in 0..users
+{
+    total_money += Users[i].getAmountSpent
+}
+total_money_per_person = total_money/numbUsers
+//Vectors organize Users into two groups. People who owe and people who are owed.
+var pplWhoOwe:[User]
+var pplOwed:[User]
+//Loop places each user into respective group while updating the amount each user owes/ is owed.
+for i:Int in 0..users
+{
+    if total_money_per_person-Users[i].getAmountSpent>0
+    {
+        println(Users[i].get_name" owes "total_money_per_person-Users[i].getAmountSpent)
+        Users[i].addAmountOwes(total_money_per_person-Users[i].getAmountSpent)
+        ppl_who_owe.append(Users[i])
+    }
+    if total_money_per_person-Users[i].getAmountSpent<0
+    {
+        println(Users[i].getName" is owed "total_money_per_person-Users[i].getAmountSpent*-1)
+        Users[i].addAmountOwed(-1*(total_money_per_person-Users[i].get_amount_spent))
+        pplOwed.append(Users[i])
+    }
+}
+//Sorts both the people who owe money and the people who are owed money by amount they
+//owe and amount they are owed respectively in ascending order.
+pplWhoOwe.sorted({ $0.amountOwes > $1.amountOwes })
+pplOwed.sorted({ $0.amountOwed > $1.amountOwed })
+//Loops check to make sure each user is in correct vector and sorted in ascending order
+for i pplOwed.count
+println("Is owed"<<ppl_owed[i].get_name()<<" "<<ppl_owed[i].get_amount_owed()<<endl;
+for(int i=0;i<ppl_who_owe.size();i++)
+cout<<"Owes"<<ppl_who_owe[i].get_name()<<" "<<ppl_who_owe[i].get_amount_owes()<<endl;
+
+var i = 0
+var j = 0
+//Loop takes first user (user 1) in ppl_who_owe vector and first user (user 2) in ppl_owed vector.
+// Next if statement checks to see which user is owed/owes more money.
+//If user 2 is owed more money than user 1 owes, then user 1 will pay all of money owed to user 1.
+//User 2's amound owed is then updated and the loop moves onto the next user in the ppl_who_owe vector.
+//If user 2 is owed les money than user 1 owes, then user 1 will pay the rest of what user 2 is owed.
+//User 1's amount owes is then updated and the loop continues onto the next user in the ppl_owed vector.
+//Loop is repeated until all users have paid/been paid.
+while i<pplOwed.count || j<pplOwed.count
+{
+    if pplOwed[i].getAmountOwed-pplWhoOwe[j].getAmountOwes>0
+    {
+        println(pplWhoOwe[j].getName" owes" pplOwed[i].getName\
+        pplWhoOwe[j].getAmountOwes)
+        pplOwed[i].addAmountOwed(pplOwed[i].getAmountOwed-pplWhoOwe[j].getAmountOwes())
+        j++
+    }
+    if pplOwed[i].getAmountOwed()-pplWhoOwe[j].getAmountOwes<0
+    {
+        println(ppl_who_owe[j].get_name" owes"ppl_owed[i].getName\
+        ppl_owed[i].getAmountOwed)
+        pplWhoOwe[j].addAmountOwes(pplWhoOwe[j].getAmountOwes-pplOwed[i].getAmountOwed)
+        i++
+    }
+}
