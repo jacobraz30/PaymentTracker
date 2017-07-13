@@ -70,7 +70,7 @@ void calc_debts2(vector<User> ppl_who_owe, vector<User> ppl_owed){
             ppl_who_owe.erase(ppl_who_owe.begin() + min_index);
             //prevents only part of a value being paid
             i--;
-            }
+        }
         else if (min == 0){
             //person who owes is equal to person owed
             cout << ppl_who_owe.at(min_index).get_name() << " owes " << temp.get_name() << " $" << temp.get_amount_owed() << endl;
